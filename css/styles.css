@@ -1,0 +1,33 @@
+.pedido__eleccion{
+    padding: .75rem 2rem;
+}
+.pedido__delete{
+    padding: .75rem 8rem;
+}
+.pedido__button{
+    background-color: yellow;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+.pedido__button:hover{
+    background-color: red;
+}
+.pedido__button-delete{
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+.pedido__img{
+    width: 200px;
+}
+.pedido__total{
+    width: 20%;
+    background-color: green;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+.pedido__eleccion h4{
+    padding: 4px 5px;
+}
