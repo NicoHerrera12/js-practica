@@ -1,0 +1,1 @@
+// how to storage an empty object in local storage?

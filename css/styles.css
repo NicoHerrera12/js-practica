@@ -1,3 +1,12 @@
+.header{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.header__carrito{
+    font-size: 1.5rem;
+}
+
 .pedido__eleccion{
     padding: .75rem 2rem;
 }

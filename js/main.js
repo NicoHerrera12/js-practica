@@ -31,60 +31,80 @@ function pedirMilaCompleta(){
     total += milaCompleta.precio;
     
 }
-function pedirPapas(){
+function pedirPapas() {
     pedido.push(papas);
     total += papas.precio;
     
 }
-function pedirNapo(){
+function pedirNapo() {
     pedido.push(napo);
     total += napo.precio;
     
 }
-
+let totalActual = document.getElementById("totalactual");
 
 document.getElementById("select-mila").onclick = function () {
     pedirMila();
     console.log(pedido);
-    console.log("Por ahora el total es: $" +total)
-    let totalActual = document.getElementById("totalactual");
-    totalactual.innerText = 'El total es: $' + total;
+    console.log("Por ahora el total es: $" + total)
+    
+    totalActual.innerText = 'El total es: $' + total;
+    localStorage.setItem("pedido", pedido);
+    localStorage.setItem("total", total);
 }
 document.getElementById("select-milacompleta").onclick = function () {
     pedirMilaCompleta();
     console.log(pedido);
-    console.log("Por ahora el total es: " +total)
-    let totalActual = document.getElementById("totalactual");
-    totalactual.innerText = 'El total es: $' + total;
+    console.log("Por ahora el total es: " + total)
+    
+    totalActual.innerText = 'El total es: $' + total;
+    localStorage.setItem("pedido", pedido);
+    localStorage.setItem("total", total)
 }
 document.getElementById("select-napo").onclick = function () {
     pedirNapo();
     console.log(pedido);
-    console.log("Por ahora el total es: " +total)
-    let totalActual = document.getElementById("totalactual");
-    totalactual.innerText = 'El total es: $' + total;
+    console.log("Por ahora el total es: " + total)
+    
+    totalActual.innerText = 'El total es: $' + total;
+    localStorage.setItem("pedido", pedido);
+    localStorage.setItem("total", total)
 }
 document.getElementById("select-papas").onclick = function () {
     pedirPapas();
     console.log(pedido);
-    console.log("Por ahora el total es: " +total)
-    let totalActual = document.getElementById("totalactual");
-    totalactual.innerText =' El total es: $' + total;
+    console.log("Por ahora el total es: " + total)
+    
+    totalActual.innerText = ' El total es: $' + total;
+    localStorage.setItem("pedido", JSON.stringify(pedido));
+    localStorage.setItem("total", total)
 }
+
+let totalGuardado = localStorage.getItem("total");
+let pedidoGuardado = localStorage.getItem("pedido");
+
+if(totalGuardado > 0){
+    
+    totalActual.innerText = ' El total es: $' + totalGuardado;
+}
+
 
 // ---------------ELIMINAR PEDIDO-------------------
 
 
-function deleteLast(){
+function deleteLast() {
     let eliminado = pedido.pop();
-    total -= eliminado.precio
-    totalactual.innerText =' El total es: $' + total;
+    total -= eliminado.precio;
+    totalActual.innerText = ' El total es: $' + total;
 }
 
 
-document.getElementById("delete-last").onclick = function (){
+document.getElementById("delete-last").onclick = function () {
     deleteLast();
     console.log(pedido)
-    console.log("Por ahora el total es: " +total)
+    console.log("Por ahora el total es: " + total);
+    localStorage.setItem("total", total);
+    localStorage.setItem("pedido", pedido);
 }
+
 
